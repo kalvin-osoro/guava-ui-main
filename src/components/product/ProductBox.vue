@@ -37,19 +37,23 @@ export default {
  <template>
     <div class="card w-100 h-100" style="margin-top: 10px"> 
         <div class="embed-responsive embed-responsive-16by9">
-            <!-- <img :src="product.image" alt="" class="card-img-top"> -->
-            <img :src="product.path" alt="" class="card-img-top">
+            <img :src="product.imagePath" alt="" class="card-img-top">
+            <!-- <img :src="product.path" alt="" class="card-img-top"> -->
         </div>         
         <div class="card-body">
             <h5 class="card-title">{{ product.name }}</h5>
             
-            <p class="card-text">
+            <!-- <p class="card-text">
+                
                 {{ product.price }}
-            </p>
+            </p> -->
             <p class="card-text">
-                {{ product.description }}
+                ksh {{ product.price }}
             </p>
-            <a href="" class="btn btn-primary">Go somewhere</a>
+            <!-- <p class="card-text">
+                {{ product.description }}
+            </p> -->
+            <a href="" class="btn btn-primary">Add to Cart</a>
             
         </div>
     </div>
