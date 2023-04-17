@@ -11,9 +11,15 @@
           <h4>{{ product.name }}</h4>
           <!-- <h6 class="catgory font-italic">{{ category.categoryName }}</h6> -->
           <h6 class="font-weight-bold">Ksh {{ product.price }}</h6>
-          <p>
+          <!-- <p>
             {{ product.description }}
-          </p>
+          </p> -->
+          <div class="features pt-3">
+            <h5><strong>Features</strong></h5>
+            <ul>
+              <li>{{ product.description }}</li>              
+            </ul>
+          </div>
           <div class="d-flex flex-row justify-content-between">
             <div class="input-group col-md-3 col-4 p-0">
               <div class="input-group-prepend">
@@ -36,6 +42,7 @@
           <!-- <div class="features pt-3">
             <h5><strong>Features</strong></h5>
             <ul>
+              <li>{{ product.description }}</li>
               <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
               <li>Officia quas, officiis eius magni error magnam voluptatem</li>
               <li>nesciunt quod! Earum voluptatibus quaerat dolorem doloribus</li>
@@ -113,9 +120,9 @@
         }
   
         // add to cart
-  
+        
         axios
-          .post(`${this.baseURL}/cart/add?token=${this.token}`, {
+          .post(`${this.baseURL}cart/add?token=${this.token}`, {            
             productId: this.id,
             quantity: this.quantity,
           })

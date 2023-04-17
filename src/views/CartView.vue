@@ -37,7 +37,7 @@
             </h6>
   
             <p class="mb-0 font-weight-bold" id="item-price">
-              $ {{ cartItem.product.price }} per unit
+              ksh {{ cartItem.product.price }} per unit
             </p>
             <p class="mb-0" style="float:left">
               Quantity:{{ cartItem.quantity }}
@@ -46,7 +46,7 @@
           <p class="mb-0" style="float:right">
             Total:
             <span class="font-weight-bold">
-              $ {{ cartItem.product.price * cartItem.quantity }}
+              ksh {{ cartItem.product.price * cartItem.quantity }}
             </span>
           </p>
           <br />
@@ -60,7 +60,7 @@
   
       <!-- display the price -->
       <div class="total-cost pt-2 text-right">
-        <h5>Total : ${{ totalCost.toFixed(2) }}</h5>
+        <h5>Total : ksh{{ totalCost.toFixed(2) }}</h5>
         <button type="button" class="btn btn-primary confirm" @click="checkout">
           Confirm order
         </button>
@@ -90,9 +90,10 @@
           })
           .catch((err) => console.log('err', err));
       },
+      // .post(`${this.baseURL}cart/add?token=${this.token}
       deleteItem(itemId) {
         axios
-          .delete(`${this.baseURL}cart/delete/${itemId}/?token=${this.token}`)
+          .delete(`${this.baseURL}cart/delete/${itemId}?token=${this.token}`)
           .then((res) => {
             if (res.status == 200) {
               this.$router.go(0);

@@ -1,6 +1,6 @@
 <template>
-  <NavbarView />
-   <!-- <NavbarView :cartCount="cartCount" @resetCartCount="resetCartCount" /> -->
+  <!-- <NavbarView /> -->
+   <NavbarView :cartCount="cartCount" @resetCartCount="resetCartCount" />
   <!-- <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
